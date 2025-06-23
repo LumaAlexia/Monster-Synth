@@ -7,28 +7,24 @@ import Head from "next/head";
 
 import "@/theme/globals.css";
 import { system } from "@/theme";
-import { Session } from "next-auth";
 import ClickSpark from "@/components/ClickSpark";
+import { appWithTranslation } from "next-i18next";
+import nextI18NextConfig from "../../next-i18next.config";
 
 export type NextPageWithLayout = NextPage & {
 	getLayout?: (children: ReactNode) => ReactNode;
 };
 
 type AppPropsWithLayout = AppProps & {
-	session: Session;
+	session?: object;
 	Component: NextPageWithLayout;
 };
 
-export default function App({
-	session,
-	Component,
-	pageProps,
-}: AppPropsWithLayout) {
+function App({ session, Component, pageProps }: AppPropsWithLayout) {
 	const getLayout = Component.getLayout ?? ((c) => c);
 
 	return (
 		<ChakraProvider value={system}>
-			{" "}
 			<Head>
 				<title>Monster Synth</title>
 				<meta charSet="utf-8" />
@@ -43,17 +39,14 @@ export default function App({
 					content="black"
 				/>
 			</Head>
-			<SessionProvider session={session}>
-				<ClickSpark
-					sparkColor="#fff"
-					sparkSize={10}
-					sparkRadius={15}
-					sparkCount={8}
-					duration={400}
-				>
+			{/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+			<SessionProvider session={session as any}>
+				<ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15}>
 					{getLayout(<Component {...pageProps} />)}
 				</ClickSpark>
 			</SessionProvider>
 		</ChakraProvider>
 	);
 }
+
+export default appWithTranslation(App, nextI18NextConfig);

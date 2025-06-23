@@ -13,10 +13,15 @@ import {
 import { colors } from "@/theme/colors";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
+import { GetStaticProps } from "next";
 
 const SignOutPage: NextPageWithLayout = () => {
 	const { data: session, status } = useSession();
 	const router = useRouter();
+	const { t } = useTranslation("common");
 
 	const handleSignOut = async () => {
 		await signOut({ callbackUrl: "/" });
@@ -25,7 +30,7 @@ const SignOutPage: NextPageWithLayout = () => {
 	if (status === "loading") {
 		return (
 			<Center minH="calc(100vh - 100px)">
-				<Spinner size="xl" color={colors.xanthous.DEFAULT} />
+				<Spinner size="xl" color={colors.orange[500]} />
 			</Center>
 		);
 	}
@@ -34,7 +39,7 @@ const SignOutPage: NextPageWithLayout = () => {
 		return (
 			<Center minH="calc(100vh - 100px)">
 				<Text color={colors.primaryText}>
-					Verrai reindirizzato alla pagina di login...
+					{t("signout.redirecting")}
 				</Text>
 			</Center>
 		);
@@ -49,51 +54,50 @@ const SignOutPage: NextPageWithLayout = () => {
 			minHeight="calc(100vh - 100px)"
 			px="20px"
 			py={10}
-			bg={colors.dark_purple.DEFAULT}
+			bg={colors.blush[500]} // Un colore che suggerisce un'azione di "uscita" o "attenzione"
 			color={colors.primaryText}
 		>
 			<Heading
 				size={"2xl"}
 				mb={6}
-				color={colors.xanthous.DEFAULT}
+				color={colors.orange[500]}
 				textAlign="center"
 			>
-				Sei sicuro di voler uscire?
+				{t("signout.title")}
 			</Heading>
 			<Text mb={8} color={colors.primaryText} textAlign="center">
-				Cliccando su &quot;Esci&quot; verrai disconnesso dal tuo
-				account.
+				{t("signout.description")}
 			</Text>
 			<VStack gap={4} width={{ base: "90%", md: "450px" }}>
 				<Button
 					onClick={handleSignOut}
-					bg={colors.bittersweet.DEFAULT} // Un colore che suggerisce un'azione di "uscita" o "attenzione"
+					bg={colors.blush[500]} // Un colore che suggerisce un'azione di "uscita" o "attenzione"
 					color={colors.primaryText}
 					width="100%"
 					py={6} // Aumentato il padding per un pulsante più grande
 					fontSize="lg"
 					_hover={{
-						bg: colors.bittersweet[600],
+						bg: colors.blush[600],
 					}}
 					_active={{
-						bg: colors.bittersweet[700],
+						bg: colors.blush[700],
 					}}
 				>
-					Esci
+					{t("signout.confirm")}
 				</Button>
 				<Button
 					onClick={() => router.push("/home")} // Pulsante per tornare indietro o annullare
 					variant="outline"
-					borderColor={colors.xanthous.DEFAULT}
-					color={colors.xanthous.DEFAULT}
+					borderColor={colors.orange[500]}
+					color={colors.orange[500]}
 					width="100%"
 					py={6}
 					fontSize="lg"
 					_hover={{
-						bg: `${colors.xanthous.DEFAULT}20`, // Sfondo leggermente colorato al hover
+						bg: `${colors.orange[500]}20`, // Sfondo leggermente colorato al hover
 					}}
 				>
-					Annulla
+					{t("signout.cancel")}
 				</Button>
 			</VStack>
 		</Box>
@@ -101,5 +105,17 @@ const SignOutPage: NextPageWithLayout = () => {
 };
 
 SignOutPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	return {
+		props: {
+			...(await serverSideTranslations(
+				locale || "en",
+				["common"],
+				nextI18NextConfig
+			)),
+		},
+	};
+};
 
 export default SignOutPage;

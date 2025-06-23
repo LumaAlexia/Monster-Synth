@@ -1,0 +1,98 @@
+{
+	"nav": {
+		"features": "Funktionen",
+		"monster": "Monster",
+		"profile": "Profil",
+		"settings": "Einstellungen",
+		"logout": "Ausloggen",
+		"signin": "Anmelden"
+	},
+	"hero": {
+		"title": "MONSTER SYNTH",
+		"subtitle": "Verwandle deine Musik in lebendige Kreaturen. Jede Note erzeugt einzigartige DNA, jeder Rhythmus erweckt digitale Monster zum Leben, die sich mit deinen Klängen entwickeln.",
+		"playDemo": "Demo Abspielen",
+		"pauseDemo": "Demo Pausieren",
+		"createMonster": "Erstelle Dein Monster"
+	},
+	"features": {
+		"title": "Fortschrittliche Musikalische Synthese-Technologie",
+		"subtitle": "Machine Learning Algorithmen analysieren jede Frequenz, jeden Rhythmus und jede Klangfarbe, um einzigartige und personalisierte Monster zu generieren.",
+		"spectral": {
+			"title": "Erweiterte Spektralanalyse",
+			"description": "Echtzeit-FFT zur Extraktion von Obertönen, Grundfrequenzen und einzigartigen Klangeigenschaften."
+		},
+		"procedural": {
+			"title": "Prozedurale Generierung",
+			"description": "Genetische Algorithmen, die digitale DNA basierend auf musikalischen und rhythmischen Mustern erstellen."
+		},
+		"evolution": {
+			"title": "Dynamische Evolution",
+			"description": "Monster passen sich kontinuierlich an und entwickeln sich entsprechend den Veränderungen in deiner Musik."
+		},
+		"visualization": {
+			"title": "3D-Visualisierung",
+			"description": "Echtzeit-Rendering mit WebGL für ein immersives und flüssiges visuelles Erlebnis."
+		},
+		"customization": {
+			"title": "Vollständige Anpassung",
+			"description": "Erweiterte Kontrollen zur Beeinflussung von Genetik, Farben und Verhaltensweisen deiner Monster."
+		},
+		"cloud": {
+			"title": "Cloud-Speicherung",
+			"description": "Persönliche Bibliothek zum Speichern, Teilen und Überprüfen deiner musikalischen Kreationen."
+		}
+	},
+	"demo": {
+		"title": "Vom Klang zum Leben",
+		"subtitle": "Entdecke, wie jedes musikalische Element die Genetik deines Monsters beeinflusst",
+		"step1": {
+			"title": "Audio Hochladen",
+			"description": "Ziehe Audiodateien oder nimm vom Mikrofon auf"
+		},
+		"step2": {
+			"title": "KI-Analyse",
+			"description": "Extraktion von BPM, Tonalität, Spektrum und Dynamik"
+		},
+		"step3": {
+			"title": "Lebendiges Monster",
+			"description": "Kreatur, die atmet, sich bewegt und sich mit der Musik entwickelt"
+		}
+	},
+	"faq": {
+		"title": "Häufig Gestellte Fragen",
+		"subtitle": "Alles was du über Monster Synth wissen musst",
+		"q1": {
+			"question": "Wie funktioniert Monster Synth?",
+			"answer": "Monster Synth analysiert deine Musik in Echtzeit mit fortschrittlichen Machine Learning Algorithmen. Jeder Audiotrack wird in Frequenzen, Rhythmen und Dynamiken zerlegt, die direkt die Genetik und Evolution deines digitalen Monsters beeinflussen."
+		},
+		"q2": {
+			"question": "Welche Audioformate werden unterstützt?",
+			"answer": "Wir unterstützen derzeit MP3, WAV, FLAC und AAC. Du kannst auch direkt vom Mikrofon aufnehmen oder Echtzeit-Audio-Input von deinem Gerät verwenden, um Monster zu erstellen, die sofort auf Musik reagieren."
+		},
+		"q3": {
+			"question": "Kann ich meine Monster speichern und teilen?",
+			"answer": "Absolut! Jedes Monster wird in deinem persönlichen Profil mit all seinen genetischen Parametern gespeichert. Du kannst deine Kreationen mit der Community teilen, Evolutionsvideos exportieren und sogar einzigartige Monster als NFTs verkaufen."
+		},
+		"q4": {
+			"question": "Ist es kostenlos?",
+			"answer": "Monster Synth bietet einen kostenlosen Plan, der grundlegende Monster-Erstellung und 5 Speicherplätze umfasst. Premium-Pläne schalten erweiterte Funktionen wie hochwertigen Export, unbegrenzte Monster und frühzeitigen Zugang zu neuen Features frei."
+		},
+		"q5": {
+			"question": "Brauche ich musikalische Erfahrung?",
+			"answer": "Überhaupt nicht! Monster Synth ist so konzipiert, dass es für jeden zugänglich ist. Ob du ein professioneller Musiker bist oder einfach nur Musik liebst, unsere Algorithmen erledigen die ganze Arbeit, um jeden Klang in faszinierende Kreaturen zu verwandeln."
+		}
+	},
+	"signin": {
+		"title": "Melde Dich in Deinem Konto An",
+		"loading": "Laden...",
+		"alreadyAuthenticated": "Du bist bereits angemeldet. Du wirst zu deiner Startseite weitergeleitet...",
+		"signInWith": "Anmelden mit",
+		"noProviders": "Keine OAuth-Authentifizierungsanbieter konfiguriert."
+	},
+	"cta": {
+		"title": "Starte Dein Klang-Abenteuer",
+		"subtitle": "Schließe dich Tausenden von Musikern und Sound-Designern an, die bereits neue kreative Dimensionen erkunden.",
+		"signupFree": "Kostenlos Registrieren",
+		"learnMore": "Mehr Erfahren"
+	}
+}

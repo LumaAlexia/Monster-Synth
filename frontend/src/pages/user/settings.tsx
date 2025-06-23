@@ -1,4 +1,4 @@
-import AppLayout from "@/components/layout/app";
+import AppLayout from "@/components/layout/AppLayout";
 import { NextPageWithLayout } from "../_app";
 import { Box, Text } from "@chakra-ui/react";
 

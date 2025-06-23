@@ -6,19 +6,22 @@ import {
 } from "next-auth/react";
 import type { GetServerSidePropsContext } from "next";
 import AppLayout from "@/components/layout/AppLayout";
-import { NextPageWithLayout } from "@/pages/_app";
-import { getServerSession, AuthOptions } from "next-auth";
+import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]";
 import { Button, Heading, Text, Box, Spinner } from "@chakra-ui/react";
 import { colors } from "@/theme/colors";
 import React from "react";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
-type SignInPageLayout = NextPageWithLayout & {
+interface SignInPageProps {
 	providers: Record<string, ClientSafeProvider> | null;
-};
+}
 
-const SignInPage: SignInPageLayout = ({ providers }) => {
+const SignInPage = ({ providers }: SignInPageProps) => {
 	const { data: session, status } = useSession();
+	const { t } = useTranslation("common");
 
 	if (status === "loading") {
 		return (
@@ -28,7 +31,7 @@ const SignInPage: SignInPageLayout = ({ providers }) => {
 				justifyContent="center"
 				minHeight="calc(100vh - 100px)"
 			>
-				<Spinner size="xl" color={colors.xanthous.DEFAULT} />
+				<Spinner size="xl" color={colors.orange[500]} />
 			</Box>
 		);
 	}
@@ -42,8 +45,7 @@ const SignInPage: SignInPageLayout = ({ providers }) => {
 				minHeight="calc(100vh - 100px)"
 			>
 				<Text color={colors.primaryText}>
-					Sei già autenticato. Verrai reindirizzato alla tua home
-					page...
+					{t("signin.alreadyAuthenticated")}
 				</Text>
 			</Box>
 		);
@@ -58,69 +60,66 @@ const SignInPage: SignInPageLayout = ({ providers }) => {
 			minHeight="calc(100vh - 100px)"
 			px="20px"
 			py={10}
-			bg={colors.dark_purple.DEFAULT}
+			bg={colors.indigo[900]}
 			color={colors.primaryText}
 		>
 			<Heading size={"4xl"} mb={6} color={colors.primaryText}>
-				Accedi al tuo Account
+				{t("signin.title")}
 			</Heading>
 
 			{providers &&
-				Object.values(providers).map((provider: any) => (
-					<Box
-						key={provider.name}
-						mt={4}
-						width={{ base: "90%", md: "450px" }}
-					>
-						<Button
-							onClick={() =>
-								signIn(provider.id, {
-									callbackUrl: "/lobby",
-								})
-							}
-							width="100%"
-							py={3}
-							fontSize="md"
-							fontWeight="bold"
-							borderRadius="md"
-							bg={colors.bright_dino_green.DEFAULT}
-							color={colors.dark_purple.DEFAULT}
-							_hover={{
-								bg: colors.xanthous[500],
-								boxShadow: `0 4px 12px ${colors.walnut_brown.DEFAULT}40`,
-							}}
-							_active={{
-								bg: colors.xanthous[700],
-							}}
-							boxShadow={`0 2px 8px ${colors.xanthous.DEFAULT}20`}
-							transition="background-color 0.2s ease, box-shadow 0.2s ease"
+				Object.values(providers).map((provider) => {
+					const p = provider as ClientSafeProvider;
+					return (
+						<Box
+							key={p.name}
+							mt={4}
+							width={{ base: "90%", md: "450px" }}
 						>
-							Accedi con {provider.name}
-						</Button>
-					</Box>
-				))}
+							<Button
+								onClick={() =>
+									signIn(p.id, {
+										callbackUrl: "/monster",
+									})
+								}
+								width="100%"
+								py={3}
+								fontSize="md"
+								fontWeight="bold"
+								borderRadius="md"
+								bg={colors.orange[500]}
+								color="white"
+								_hover={{
+									bg: colors.orange[600],
+									boxShadow: `0 4px 12px ${colors.orange[500]}40`,
+								}}
+								_active={{
+									bg: colors.orange[700],
+								}}
+								boxShadow={`0 2px 8px ${colors.orange[500]}20`}
+								transition="background-color 0.2s ease, box-shadow 0.2s ease"
+							>
+								{t("signin.signInWith")} {p.name}
+							</Button>
+						</Box>
+					);
+				})}
 			{!providers && (
-				<Text
-					mt={4}
-					color={colors.bittersweet.DEFAULT}
-					textAlign="center"
-				>
-					Nessun provider di autenticazione OAuth configurato.
+				<Text mt={4} color={colors.blush[500]} textAlign="center">
+					{t("signin.noProviders")}
 				</Text>
 			)}
 		</Box>
 	);
 };
 
-SignInPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
+SignInPage.getLayout = (page: React.ReactNode) => <AppLayout>{page}</AppLayout>;
 
-export async function getServerSideProps(
-	context: GetServerSidePropsContext
-): Promise<{ props: SignInPageProps }> {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const session = await getServerSession(
 		context.req,
 		context.res,
-		authOptions as AuthOptions
+		authOptions
 	);
 
 	if (session) {
@@ -129,13 +128,20 @@ export async function getServerSideProps(
 				destination: "/home",
 				permanent: false,
 			},
-		} as any;
+		};
 	}
 
 	const providers = await getProviders();
 
 	return {
-		props: { providers: providers ?? null },
+		props: {
+			providers: providers ?? null,
+			...(await serverSideTranslations(
+				context.locale || "en",
+				["common"],
+				nextI18NextConfig
+			)),
+		},
 	};
 }
 

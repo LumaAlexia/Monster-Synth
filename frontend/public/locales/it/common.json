@@ -1,0 +1,98 @@
+{
+	"nav": {
+		"features": "Funzionalità",
+		"monster": "Mostro",
+		"profile": "Profilo",
+		"settings": "Impostazioni",
+		"logout": "Esci",
+		"signin": "Accedi"
+	},
+	"hero": {
+		"title": "MONSTER SYNTH",
+		"subtitle": "Trasforma la tua musica in creature viventi. Ogni nota genera DNA unico, ogni ritmo dà vita a mostri digitali che evolvono con i tuoi suoni.",
+		"playDemo": "Riproduci Demo",
+		"pauseDemo": "Pausa Demo",
+		"createMonster": "Crea il Tuo Mostro"
+	},
+	"features": {
+		"title": "Tecnologia di Sintesi Musicale Avanzata",
+		"subtitle": "Algoritmi di machine learning analizzano ogni frequenza, ritmo e timbro per generare mostri unici e personalizzati.",
+		"spectral": {
+			"title": "Analisi Spettrale Avanzata",
+			"description": "FFT in tempo reale per estrarre armoniche, frequenze fondamentali e caratteristiche timbriche uniche."
+		},
+		"procedural": {
+			"title": "Generazione Procedurale",
+			"description": "Algoritmi genetici che creano DNA digitale basato su pattern musicali e ritmici."
+		},
+		"evolution": {
+			"title": "Evoluzione Dinamica",
+			"description": "I mostri si adattano ed evolvono continuamente seguendo i cambiamenti nella tua musica."
+		},
+		"visualization": {
+			"title": "Visualizzazione 3D",
+			"description": "Rendering in tempo reale con WebGL per un'esperienza visiva immersiva e fluida."
+		},
+		"customization": {
+			"title": "Personalizzazione Totale",
+			"description": "Controlli avanzati per influenzare genetica, colori e comportamenti dei tuoi mostri."
+		},
+		"cloud": {
+			"title": "Salvataggio Cloud",
+			"description": "Libreria personale per salvare, condividere e rivedere le tue creazioni musicali."
+		}
+	},
+	"demo": {
+		"title": "Dal Suono alla Vita",
+		"subtitle": "Scopri come ogni elemento musicale influenza la genetica del tuo mostro",
+		"step1": {
+			"title": "Carica Audio",
+			"description": "Trascina file audio o registra dal microfono"
+		},
+		"step2": {
+			"title": "Analisi IA",
+			"description": "Estrazione di BPM, tonalità, spettro e dinamiche"
+		},
+		"step3": {
+			"title": "Mostro Vivente",
+			"description": "Creatura che respira, si muove ed evolve con la musica"
+		}
+	},
+	"faq": {
+		"title": "Domande Frequenti",
+		"subtitle": "Tutto quello che devi sapere su Monster Synth",
+		"q1": {
+			"question": "Come funziona Monster Synth?",
+			"answer": "Monster Synth analizza la tua musica in tempo reale utilizzando algoritmi avanzati di machine learning. Ogni traccia audio viene scomposta in frequenze, ritmi e dinamiche che influenzano direttamente la genetica e l'evoluzione del tuo mostro digitale."
+		},
+		"q2": {
+			"question": "Quali formati audio sono supportati?",
+			"answer": "Attualmente supportiamo MP3, WAV, FLAC e AAC. Puoi anche registrare direttamente dal microfono o utilizzare input audio in tempo reale dal tuo dispositivo per creare mostri che reagiscono istantaneamente alla musica."
+		},
+		"q3": {
+			"question": "Posso salvare e condividere i miei mostri?",
+			"answer": "Assolutamente! Ogni mostro viene salvato nel tuo profilo personale con tutti i suoi parametri genetici. Puoi condividere le tue creazioni con la community, esportare video di evoluzione e persino vendere mostri unici come NFT."
+		},
+		"q4": {
+			"question": "È gratuito?",
+			"answer": "Monster Synth offre un piano gratuito che include la creazione base di mostri e 5 slot di salvataggio. I piani premium sbloccano funzionalità avanzate come export ad alta qualità, mostri illimitati e accesso anticipato alle nuove funzionalità."
+		},
+		"q5": {
+			"question": "Serve esperienza musicale?",
+			"answer": "Per niente! Monster Synth è progettato per essere accessibile a tutti. Che tu sia un musicista professionista o semplicemente ami la musica, i nostri algoritmi faranno tutto il lavoro per trasformare qualsiasi suono in creature affascinanti."
+		}
+	},
+	"signin": {
+		"title": "Accedi al Tuo Account",
+		"loading": "Caricamento...",
+		"alreadyAuthenticated": "Sei già autenticato. Verrai reindirizzato alla tua home page...",
+		"signInWith": "Accedi con",
+		"noProviders": "Nessun provider di autenticazione OAuth configurato."
+	},
+	"cta": {
+		"title": "Inizia la Tua Avventura Sonora",
+		"subtitle": "Unisciti a migliaia di musicisti e sound designer che stanno già esplorando nuove dimensioni creative.",
+		"signupFree": "Registrati Gratis",
+		"learnMore": "Scopri di Più"
+	}
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 @tailwind base;
@@ -14,4 +14,113 @@
 	-ms-user-select: none; /* IE 10 and IE 11 */
 	user-select: none; /* Standard syntax */
 	font-family: "Montserrat", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0f0519;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(45deg, #f68143, #e84874);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(45deg, #e84874, #c73796);
+}
+
+/* Glass morphism effect */
+.glass {
+	backdrop-filter: blur(16px) saturate(180%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	background-color: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Gradient text animation */
+.animated-gradient-text {
+	background: linear-gradient(-45deg, #f68143, #e84874, #c73796, #9a276e);
+	background-size: 400% 400%;
+	animation: gradient-shift 4s ease infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+@keyframes gradient-shift {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Particle animation */
+.floating-particle {
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+}
+
+/* Glowing effect */
+.glow {
+	filter: drop-shadow(0 0 10px currentColor);
+}
+
+.glow-strong {
+	filter: drop-shadow(0 0 20px currentColor)
+		drop-shadow(0 0 40px currentColor);
+}
+
+/* Wave animation */
+.wave {
+	animation: wave 2s linear infinite;
+}
+
+@keyframes wave {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+/* Pulse animation */
+.pulse-slow {
+	animation: pulse-slow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.8;
+	}
 }

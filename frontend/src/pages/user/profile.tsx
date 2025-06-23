@@ -52,38 +52,16 @@ const ProfilePage: NextPageWithLayout = () => {
 									as="h1"
 									size={{ base: "4xl", md: "5xl" }}
 									fontWeight="bold"
-									color={colors.bright_dino_green.DEFAULT}
+									color={colors.blush[500]}
 								>
 									{session?.user?.name}
 								</Heading>
-								{ /* edit name logic here */} 
 							</HStack>
 							<Box
 								fontSize={{ base: "xl", md: "2xl" }}
 								color={colors.primaryText}
 							>
 								Statistiche:
-							</Box>
-							<Box>
-								<Box
-									fontSize={{ base: "lg", md: "xl" }}
-									color={colors.walnut_brown.DEFAULT}
-								>
-									Partite giocate: {session?.user.totalGames}
-								</Box>
-								<Box
-									fontSize={{ base: "lg", md: "xl" }}
-									color={colors.walnut_brown.DEFAULT}
-								>
-									Vittorie: {session?.user?.totalWins}
-								</Box>
-								<Box
-									fontSize={{ base: "lg", md: "xl" }}
-									color={colors.walnut_brown.DEFAULT}
-								>
-									Podi Raggiunti:{" "}
-									{session?.user?.podiumPlacements}
-								</Box>
 							</Box>
 						</VStack>
 					</HStack>

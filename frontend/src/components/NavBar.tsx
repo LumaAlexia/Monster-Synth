@@ -1,204 +1,185 @@
 import {
+	Box,
 	Flex,
-	Heading,
-	Image,
-	Link as ChakraLink,
+	HStack,
+	IconButton,
+	useDisclosure,
 	Stack,
-	Menu,
 	Avatar,
-	Skeleton,
-	Portal,
+	Menu,
 	Button,
+	Link as ChakraLink,
 } from "@chakra-ui/react";
+import { useSession, signOut } from "next-auth/react";
 import NextLink from "next/link";
-import { colors } from "../theme/colors";
-import { useSession } from "next-auth/react";
+import { useTranslation } from "next-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { MdAdfScanner, MdClose } from "react-icons/md";
+import { motion } from "framer-motion";
 
-const NavBar = () => {
-	const { data: session, status } = useSession();
+const MotionBox = motion(Box);
+
+const NavLink = ({
+	href,
+	children,
+}: {
+	href: string;
+	children: React.ReactNode;
+}) => (
+	<ChakraLink
+		as={NextLink}
+		href={href}
+		px={2}
+		py={1}
+		rounded={"md"}
+		color="whiteAlpha.800"
+		_hover={{
+			textDecoration: "none",
+			bg: "whiteAlpha.200",
+			color: "white",
+		}}
+	>
+		{children}
+	</ChakraLink>
+);
+
+export default function NavBar() {
+	const { open, onOpen, onClose } = useDisclosure();
+	const { data: session } = useSession();
+	const { t } = useTranslation("common");
+
+	const navLinks = [
+		{ name: t("nav.features"), href: "/#features" },
+		{ name: t("nav.monster"), href: "/user/monster" },
+	];
 
 	return (
-		<Flex
-			as="nav"
-			align="center"
-			justify="space-between"
-			wrap="wrap"
-			padding={{ base: 4, md: 6 }}
-			bg={colors.dark_purple[500]}
-			borderBottom="2px solid"
-			borderColor={colors.xanthous.DEFAULT}
-			w="100%"
+		<MotionBox
+			bg="linear-gradient(135deg, #4c1d95, #be185d, #f97316)"
+			px={4}
+			shadow="xl"
+			position="relative"
+			zIndex="banner"
+			backgroundSize="200% 200%"
+			animate={{
+				backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+			}}
+			transition={{
+				duration: 10,
+				ease: "easeInOut",
+				repeat: Infinity,
+			}}
 		>
-			<Flex align="center" mr={5}>
-				<ChakraLink
-					as={NextLink}
-					href="/home"
-					_hover={{ textDecoration: "none" }}
+			<Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
+				<IconButton
+					size={"md"}
+					aria-label={"Open Menu"}
+					display={{ md: "none" }}
+					onClick={open ? onClose : onOpen}
+					bg="transparent"
+					color="white"
+					_hover={{ bg: "whiteAlpha.300" }}
 				>
-					<Image
-						src="/logo.png"
-						alt="Happy Little Dinosaurs Logo"
-						boxSize={{ base: "60px", md: "70px" }}
-					/>
-				</ChakraLink>
-				<Heading
-					as="h1"
-					size={{ base: "xl", md: "2xl" }}
-					ml={3}
-					fontWeight="bold"
-					color={colors.primaryText}
-				>
-					Happy Little Dinosaurs
-				</Heading>
-			</Flex>
-
-			<Stack
-				direction={{ base: "column", md: "row" }}
-				gap={{ base: 8, md: 12 }}
-				alignItems={{ base: "flex-start", md: "center" }}
-			>
-				<ChakraLink
-					as={NextLink}
-					href="/rules"
-					color={colors.primaryText}
-					_hover={{
-						color: colors.bright_dino_green.DEFAULT,
-						transform: "scale(1.1)",
-						transition: "transform 0.2s ease-in-out",
-					}}
-					fontSize={{ base: "lg", md: "xl" }}
-					fontWeight="medium"
-				>
-					Regole
-				</ChakraLink>
-				<ChakraLink
-					as={NextLink}
-					href="/support-us"
-					color={colors.primaryText}
-					_hover={{
-						color: colors.bright_dino_green.DEFAULT,
-						transform: "scale(1.1)",
-						transition: "transform 0.2s ease-in-out",
-					}}
-					fontSize={{ base: "lg", md: "xl" }}
-					fontWeight="medium"
-				>
-					Supportaci
-				</ChakraLink>
-				{status != "unauthenticated" ? (
-					<Menu.Root>
-						<Menu.Trigger asChild mr={5}>
-							{status == "loading" ? (
-								<Skeleton
-									borderRadius="xl"
-									w={"55px"}
-									h={"55px"}
-								/>
-							) : (
-								<Button w={"58px"} h={"58px"} p={0}>
-									<Avatar.Root
-										shape="rounded"
-										w={"55px"}
-										h={"55px"}
-									>
-										<Avatar.Fallback
-											name={session!.user!.name || ""}
-										/>
+					{open ? <MdClose /> : <MdAdfScanner />}
+				</IconButton>
+				<HStack gap={8} alignItems={"center"}>
+					<ChakraLink
+						as={NextLink}
+						href="/home"
+						color="white"
+						fontWeight="bold"
+						fontSize="xl"
+					>
+						Monster Synth
+					</ChakraLink>
+					<HStack gap={4} display={{ base: "none", md: "flex" }}>
+						{navLinks.map((link) => (
+							<NavLink key={link.href} href={link.href}>
+								{link.name}
+							</NavLink>
+						))}
+					</HStack>
+				</HStack>
+				<Flex alignItems={"center"}>
+					<LanguageSwitcher />
+					{session ? (
+						<Menu.Root>
+							<Menu.Trigger asChild>
+								<Button
+									rounded={"full"}
+									variant={"ghost"}
+									cursor={"pointer"}
+									minW={0}
+								>
+									<Avatar.Root size={"sm"}>
 										<Avatar.Image
-											src={session!.user!.image || ""}
+											src={
+												session.user?.image || undefined
+											}
 										/>
+										<Avatar.Fallback />
 									</Avatar.Root>
 								</Button>
-							)}
-						</Menu.Trigger>
-						<Portal>
+							</Menu.Trigger>
 							<Menu.Positioner>
 								<Menu.Content
-									backgroundColor={
-										colors.walnut_brown.DEFAULT
-									}
+									bg="gray.800"
+									borderColor="gray.700"
 								>
-									<Menu.Item value="profile">
-										<ChakraLink
-											as={NextLink}
-											href="/user/profile"
-											color={colors.primaryText}
-											_hover={{
-												color: colors.bright_dino_green
-													.DEFAULT,
-												transform: "scale(1.1)",
-												transition:
-													"transform 0.2s ease-in-out",
-											}}
-											fontSize={{ base: "lg", md: "xl" }}
-											fontWeight="medium"
-										>
-											Profilo
-										</ChakraLink>
-									</Menu.Item>
-									<Menu.Item value="lobby">
-										<ChakraLink
-											as={NextLink}
-											href="/lobby"
-											color={colors.primaryText}
-											_hover={{
-												color: colors.bright_dino_green
-													.DEFAULT,
-												transform: "scale(1.1)",
-												transition:
-													"transform 0.2s ease-in-out",
-											}}
-											fontSize={{ base: "lg", md: "xl" }}
-											fontWeight="medium"
-										>
-											Lobby
-										</ChakraLink>
-									</Menu.Item>
-									<Menu.Separator />
 									<Menu.Item
-										value="logout"
-										color={colors.bittersweet.DEFAULT}
+										as={NextLink}
+										href="/user/profile"
 									>
-										<ChakraLink
-											as={NextLink}
-											href="/api/auth/signout"
-											color={colors.bittersweet.DEFAULT}
-											_hover={{
-												color: colors.bittersweet
-													.DEFAULT,
-												transform: "scale(1.1)",
-												transition:
-													"transform 0.2s ease-in-out",
-											}}
-											fontSize={{ base: "lg", md: "xl" }}
-											fontWeight="medium"
-										>
-											Logout
-										</ChakraLink>
+										{t("nav.profile")}
+									</Menu.Item>
+									<Menu.Item
+										as={NextLink}
+										href="/user/settings"
+									>
+										{t("nav.settings")}
+									</Menu.Item>
+									<Menu.Separator borderColor="gray.700" />
+									<Menu.Item
+										onClick={() => signOut()}
+										bg="gray.800"
+										_hover={{ bg: "purple.700" }}
+										value="logout"
+									>
+										{t("nav.logout")}
 									</Menu.Item>
 								</Menu.Content>
 							</Menu.Positioner>
-						</Portal>
-					</Menu.Root>
-				) : (
-					<ChakraLink
-						as={NextLink}
-						href="/api/auth/signin"
-						color={colors.primaryText}
-						_hover={{
-							color: colors.bright_dino_green.DEFAULT,
-							transform: "scale(1.1)",
-							transition: "transform 0.2s ease-in-out",
-						}}
-						fontSize={{ base: "lg", md: "xl" }}
-						fontWeight="medium"
-					>
-						Accedi
-					</ChakraLink>
-				)}
-			</Stack>
-		</Flex>
-	);
-};
+						</Menu.Root>
+					) : (
+						<Button
+							as={NextLink}
+							href="/auth/signin"
+							variant="solid"
+							bg="orange.500"
+							color="white"
+							_hover={{
+								bg: "orange.600",
+								textDecoration: "none",
+							}}
+							ml={4}
+						>
+							{t("nav.signin")}
+						</Button>
+					)}
+				</Flex>
+			</Flex>
 
-export default NavBar;
+			{open ? (
+				<Box pb={4} display={{ md: "none" }}>
+					<Stack as={"nav"} gap={4}>
+						{navLinks.map((link) => (
+							<NavLink key={link.href} href={link.href}>
+								{link.name}
+							</NavLink>
+						))}
+					</Stack>
+				</Box>
+			) : null}
+		</MotionBox>
+	);
+}

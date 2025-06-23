@@ -4,7 +4,6 @@ declare module "next-auth" {
 	/**
 	 * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
 	 */
-	/* Temporarily commented out to avoid type errors in the project.
 	interface Session {
 		user: {
 			lastChangedName?: Date | null;
@@ -14,5 +13,4 @@ declare module "next-auth" {
 			activeRooms?: number | null;
 		} & DefaultSession["user"];
 	}
-		*/
 }

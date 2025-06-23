@@ -1,0 +1,98 @@
+{
+	"nav": {
+		"features": "Features",
+		"monster": "Monster",
+		"profile": "Profile",
+		"settings": "Settings",
+		"logout": "Logout",
+		"signin": "Sign In"
+	},
+	"hero": {
+		"title": "MONSTER SYNTH",
+		"subtitle": "Transform your music into living creatures. Every note generates unique DNA, every rhythm gives life to digital monsters that evolve with your sounds.",
+		"playDemo": "Play Demo",
+		"pauseDemo": "Pause Demo",
+		"createMonster": "Create Your Monster"
+	},
+	"features": {
+		"title": "Advanced Musical Synthesis Technology",
+		"subtitle": "Machine learning algorithms analyze every frequency, rhythm and timbre to generate unique and personalized monsters.",
+		"spectral": {
+			"title": "Advanced Spectral Analysis",
+			"description": "Real-time FFT to extract harmonics, fundamental frequencies and unique timbral characteristics."
+		},
+		"procedural": {
+			"title": "Procedural Generation",
+			"description": "Genetic algorithms that create digital DNA based on musical and rhythmic patterns."
+		},
+		"evolution": {
+			"title": "Dynamic Evolution",
+			"description": "Monsters adapt and evolve continuously following changes in your music."
+		},
+		"visualization": {
+			"title": "3D Visualization",
+			"description": "Real-time rendering with WebGL for immersive and fluid visual experience."
+		},
+		"customization": {
+			"title": "Total Customization",
+			"description": "Advanced controls to influence genetics, colors and behaviors of your monsters."
+		},
+		"cloud": {
+			"title": "Cloud Saving",
+			"description": "Personal library to save, share and review your musical creations."
+		}
+	},
+	"demo": {
+		"title": "From Sound to Life",
+		"subtitle": "Discover how every musical element influences your monster's genetics",
+		"step1": {
+			"title": "Upload Audio",
+			"description": "Drag audio files or record from microphone"
+		},
+		"step2": {
+			"title": "AI Analysis",
+			"description": "Extraction of BPM, tonality, spectrum and dynamics"
+		},
+		"step3": {
+			"title": "Living Monster",
+			"description": "Creature that breathes, moves and evolves with music"
+		}
+	},
+	"faq": {
+		"title": "Frequently Asked Questions",
+		"subtitle": "Everything you need to know about Monster Synth",
+		"q1": {
+			"question": "How does Monster Synth work?",
+			"answer": "Monster Synth analyzes your music in real-time using advanced machine learning algorithms. Each audio track is broken down into frequencies, rhythms and dynamics that directly influence the genetics and evolution of your digital monster."
+		},
+		"q2": {
+			"question": "What audio formats are supported?",
+			"answer": "We currently support MP3, WAV, FLAC and AAC. You can also record directly from the microphone or use real-time audio input from your device to create monsters that react instantly to music."
+		},
+		"q3": {
+			"question": "Can I save and share my monsters?",
+			"answer": "Absolutely! Every monster is saved to your personal profile with all its genetic parameters. You can share your creations with the community, export evolution videos and even sell unique monsters as NFTs."
+		},
+		"q4": {
+			"question": "Is it free?",
+			"answer": "Monster Synth offers a free plan that includes basic monster creation and 5 save slots. Premium plans unlock advanced features like high-quality export, unlimited monsters and early access to new features."
+		},
+		"q5": {
+			"question": "Do I need musical experience?",
+			"answer": "Not at all! Monster Synth is designed to be accessible to everyone. Whether you're a professional musician or simply love music, our algorithms will do all the work to transform any sound into fascinating creatures."
+		}
+	},
+	"signin": {
+		"title": "Sign In to Your Account",
+		"loading": "Loading...",
+		"alreadyAuthenticated": "You are already authenticated. You will be redirected to your home page...",
+		"signInWith": "Sign In with",
+		"noProviders": "No OAuth authentication providers configured."
+	},
+	"cta": {
+		"title": "Start Your Sound Adventure",
+		"subtitle": "Join thousands of musicians and sound designers who are already exploring new creative dimensions.",
+		"signupFree": "Sign Up Free",
+		"learnMore": "Learn More"
+	}
+}

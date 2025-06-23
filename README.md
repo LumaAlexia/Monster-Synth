@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.png" alt="Monster Synth Banner" width="900" height="450" />
+  <img src="./assets/banner.png" alt="Monster Synth Banner" width="900" height="460" />
 </p>
 
 # Monster Synth Web App
@@ -158,7 +158,8 @@ Visit `http://localhost:3000` to interact with your Monster Synth instance.
 ## Roadmap & Progress
 
 -   [x] **Project setup & environment configuration**
--   [ ] **Authentication & Storage integration**
+-   [x] **Authentication**
+-   [ ] **Storage Integration**
 -   [ ] **Audio Input & Feature Extraction** _(in progress)_
 -   [ ] **Monster Generation Engine**
 -   [ ] **User Dashboard & Session History**
@@ -169,7 +170,7 @@ Visit `http://localhost:3000` to interact with your Monster Synth instance.
 
 ## Checklist
 
--   [ ] NextAuth.js + Supabase authentication flows
+-   [x] NextAuth.js + Supabase authentication flows
 -   [ ] Supabase Storage endpoints for audio
 -   [ ] Browser-based audio recording & file upload
 -   [ ] Meyda integration for feature extraction
