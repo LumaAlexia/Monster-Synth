@@ -1,13 +1,11 @@
 import AppLayout from "@/components/layout/AppLayout";
 import { NextPageWithLayout } from "../_app";
-import { Box, Text } from "@chakra-ui/react";
+import { UserSettingsView } from "@/components/views";
 
 export const SettingsPage: NextPageWithLayout = () => {
-	return (
-		<Box>
-			<Text>Settings</Text>
-		</Box>
-	);
+	return <UserSettingsView />;
 };
 
 SettingsPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
+
+export default SettingsPage;

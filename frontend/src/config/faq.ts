@@ -1,11 +1,28 @@
 export interface FAQItem {
 	question: string;
-	answer: string;
+	answer: string[];
 }
 
-export const faqData: FAQItem[] = [
+// This data structure mirrors the translation keys
+export const getFAQData = (t: (key: string) => string): FAQItem[] => [
 	{
-		question: "What is the purpose of this application?",
-		answer: "This application is designed to let users create and grow their own virtual monsters by feeding them with your own music. Based on your taster, the monster will evolve and change its appearance, creating a unique experience for each user.",
+		question: t("faq.q1.question"),
+		answer: [t("faq.q1.answer")],
+	},
+	{
+		question: t("faq.q2.question"),
+		answer: [t("faq.q2.answer")],
+	},
+	{
+		question: t("faq.q3.question"),
+		answer: [t("faq.q3.answer")],
+	},
+	{
+		question: t("faq.q4.question"),
+		answer: [t("faq.q4.answer")],
+	},
+	{
+		question: t("faq.q5.question"),
+		answer: [t("faq.q5.answer")],
 	},
 ];

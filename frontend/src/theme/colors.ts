@@ -1,5 +1,7 @@
 export const colors = {
 	primaryText: "#f5f5f5",
+	infoCard: "#1a1a2e",
+	featureCard: "#2a2a4e",
 	egyptian_blue: {
 		500: "#37319B",
 		100: "#0b0a1f",

@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-	--color-mint: #796ad6;
-}
-
 * {
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
@@ -37,14 +33,6 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: linear-gradient(45deg, #e84874, #c73796);
-}
-
-/* Glass morphism effect */
-.glass {
-	backdrop-filter: blur(16px) saturate(180%);
-	-webkit-backdrop-filter: blur(16px) saturate(180%);
-	background-color: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 /* Gradient text animation */
@@ -123,4 +111,13 @@ html {
 		transform: scale(1.05);
 		opacity: 0.8;
 	}
+}
+
+/* Gradients */
+.main-gradient {
+	background: linear-gradient(90deg, #4c1d95, #a90e4fff, #c06524ff);
+}
+
+.secondary-gradient {
+	background: linear-gradient(135deg, #4c1d95, #be185d, #f97316);
 }

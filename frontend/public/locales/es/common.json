@@ -1,0 +1,156 @@
+{
+	"nav": {
+		"features": "Características",
+		"monster": "Monstruo",
+		"profile": "Perfil",
+		"settings": "Configuración",
+		"logout": "Cerrar sesión",
+		"signin": "Iniciar sesión",
+		"feedback": "Comentarios"
+	},
+	"hero": {
+		"title": "MONSTER SYNTH",
+		"subtitle": "Transforma tu música en criaturas vivientes. Cada nota genera un ADN único, cada ritmo da vida a monstruos digitales que evolucionan con tus sonidos.",
+		"playDemo": "Reproducir demostración",
+		"pauseDemo": "Pausar demostración",
+		"createMonster": "Crea tu monstruo"
+	},
+	"features": {
+		"title": "Tecnología Avanzada de Síntesis Musical",
+		"subtitle": "Los algoritmos de aprendizaje automático analizan cada frecuencia, ritmo y timbre para generar monstruos únicos y personalizados.",
+		"spectral": {
+			"title": "Análisis Espectral Avanzado",
+			"description": "FFT en tiempo real para extraer armónicos, frecuencias fundamentales y características tímbricas únicas."
+		},
+		"procedural": {
+			"title": "Generación Procedimental",
+			"description": "Algoritmos genéticos que crean ADN digital basado en patrones musicales y rítmicos."
+		},
+		"evolution": {
+			"title": "Evolución Dinámica",
+			"description": "Los monstruos se adaptan y evolucionan continuamente siguiendo los cambios en tu música."
+		},
+		"visualization": {
+			"title": "Visualización 3D",
+			"description": "Renderizado en tiempo real con WebGL para una experiencia visual inmersiva y fluida."
+		},
+		"customization": {
+			"title": "Personalización Total",
+			"description": "Controles avanzados para influir en la genética, los colores y los comportamientos de tus monstruos."
+		},
+		"cloud": {
+			"title": "Guardado en la Nube",
+			"description": "Biblioteca personal para guardar, compartir y revisar tus creaciones musicales."
+		}
+	},
+	"demo": {
+		"title": "Del Sonido a la Vida",
+		"subtitle": "Descubre cómo cada elemento musical influye en la genética de tu monstruo",
+		"step1": {
+			"title": "Subir Audio",
+			"description": "Arrastra archivos de audio o graba desde el micrófono"
+		},
+		"step2": {
+			"title": "Análisis de IA",
+			"description": "Extracción de BPM, tonalidad, espectro y dinámica"
+		},
+		"step3": {
+			"title": "Monstruo Viviente",
+			"description": "Criatura que respira, se mueve y evoluciona con la música"
+		}
+	},
+	"faq": {
+		"title": "Preguntas Frecuentes",
+		"subtitle": "Todo lo que necesitas saber sobre Monster Synth",
+		"q1": {
+			"question": "¿Cómo funciona Monster Synth?",
+			"answer": "Monster Synth analiza tu música en tiempo real utilizando algoritmos avanzados de aprendizaje automático. Cada pista de audio se descompone en frecuencias, ritmos y dinámicas que influyen directamente en la genética y evolución de tu monstruo digital."
+		},
+		"q2": {
+			"question": "¿Qué formatos de audio son compatibles?",
+			"answer": "Actualmente admitimos MP3, WAV, FLAC y AAC. También puedes grabar directamente desde el micrófono o usar la entrada de audio en tiempo real de tu dispositivo para crear monstruos que reaccionan instantáneamente a la música."
+		},
+		"q3": {
+			"question": "¿Todos los monstruos son únicos?",
+			"answer": "¡Absolutamente! Cada monstruo generado por Monster Synth es completamente único. Los algoritmos de IA crean combinaciones genéticas distintivas basadas en tu entrada de audio específica, asegurando que nunca existan dos monstruos exactamente iguales, incluso de la misma canción."
+		},
+		"q4": {
+			"question": "¿Es gratis?",
+			"answer": "Monster Synth ofrece un plan gratuito que incluye la creación básica de monstruos y 5 espacios para guardar. Los planes premium desbloquean funciones avanzadas como la exportación de alta calidad, monstruos ilimitados y acceso anticipado a nuevas funciones."
+		},
+		"q5": {
+			"question": "¿Puedo usar Monster Synth para proyectos comerciales?",
+			"answer": "¡Sí! Los suscriptores premium pueden usar sus monstruos generados para propósitos comerciales, incluyendo videos musicales, actuaciones en vivo y proyectos de arte digital. El plan gratuito está limitado solo al uso personal."
+		}
+	},
+	"signin": {
+		"title": "Inicia Sesión en tu Cuenta",
+		"loading": "Cargando...",
+		"alreadyAuthenticated": "Ya estás autenticado. Serás redirigido a tu página de inicio...",
+		"signInWith": "Iniciar sesión con",
+		"noProviders": "No se han configurado proveedores de autenticación OAuth."
+	},
+	"signout": {
+		"title": "Cerrar Sesión de tu Cuenta",
+		"description": "¿Estás seguro de que quieres cerrar sesión de tu cuenta Monster Synth?",
+		"confirm": "Sí, Cerrar Sesión",
+		"cancel": "Cancelar",
+		"redirecting": "No estás conectado. Redirigiendo a la página de inicio..."
+	},
+	"cta": {
+		"title": "Comienza tu Aventura Sonora",
+		"subtitle": "Únete a miles de músicos y diseñadores de sonido que ya están explorando nuevas dimensiones creativas.",
+		"signupFree": "Regístrate Gratis",
+		"learnMore": "Aprende Más"
+	},
+	"common": {
+		"loading": "Cargando...",
+		"welcome": "Bienvenido",
+		"welcomeBack": "Bienvenido de vuelta",
+		"statistics": "Estadísticas:",
+		"signedInAs": "Conectado como",
+		"notSignedIn": "No conectado",
+		"signIn": "Iniciar sesión",
+		"signOut": "Cerrar sesión"
+	},
+	"monster": {
+		"welcomeTitle": "¡Bienvenido a Monster Synth!",
+		"welcomeSubtitle": "Desata tu creatividad y da vida a tu monstruo musical. Compón melodías únicas y observa a tu monstruo bailar al ritmo de tus melodías.",
+		"startCreating": "Comenzar a Crear",
+		"welcomeBackUser": "¡Bienvenido de vuelta, {name}!",
+		"readyToCreate": "¿Listo para hacer ruido? Regresa a tu estudio y continúa creando tu obra maestra.",
+		"dashboardDescription": "Accede a tus herramientas de creación de monstruos, gestiona tu colección de criaturas y explora nuevas posibilidades audio-genéticas.",
+		"goToDashboard": "Ir al Panel"
+	},
+	"settings": {
+		"title": "Configuración",
+		"pageTitle": "Configuración de Cuenta"
+	},
+	"feedback": {
+		"title": "Envíame Tus Comentarios",
+		"subtitle": "Tu opinión es importante para mí. Ayúdame a mejorar Monster Synth compartiendo tus pensamientos, sugerencias o reportando cualquier problema que hayas encontrado.",
+		"improvements": {
+			"title": "Mejoras",
+			"description": "Comparte tus ideas para hacer Monster Synth aún mejor"
+		},
+		"bugs": {
+			"title": "Reportes de Errores",
+			"description": "Ayúdame a solucionar problemas reportando cualquier error que hayas encontrado"
+		},
+		"general": {
+			"title": "Comentarios Generales",
+			"description": "Cuéntame sobre tu experiencia general con Monster Synth"
+		},
+		"form": {
+			"title": "Comparte Tus Pensamientos",
+			"description": "¡Valoro tu opinión y quiero escucharte!",
+			"email": "Dirección de Correo",
+			"emailPlaceholder": "tu@email.com",
+			"message": "Tu Mensaje",
+			"messagePlaceholder": "Cuéntame qué piensas, qué características te gustaría ver, o cualquier problema que hayas experimentado...",
+			"submit": "Enviar Comentarios",
+			"sending": "Enviando...",
+			"success": "¡Gracias por tus comentarios! Los revisaré y te responderé pronto."
+		}
+	}
+}

@@ -18,7 +18,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 	onToggle,
 	variant = "default",
 }) => {
-	const MotionBox = motion(Box);
+	const MotionBox = motion.create(Box);
 
 	const getVariantStyles = () => {
 		switch (variant) {

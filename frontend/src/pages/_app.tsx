@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { SessionProvider } from "next-auth/react";
+import { I18nextProvider } from "react-i18next";
 import { AppProps } from "next/app";
 import { NextPage } from "next";
 import { ReactNode } from "react";
@@ -8,8 +9,7 @@ import Head from "next/head";
 import "@/theme/globals.css";
 import { system } from "@/theme";
 import ClickSpark from "@/components/ClickSpark";
-import { appWithTranslation } from "next-i18next";
-import nextI18NextConfig from "../../next-i18next.config";
+import i18n from "@/i18n/config"; // Import i18n instance
 
 export type NextPageWithLayout = NextPage & {
 	getLayout?: (children: ReactNode) => ReactNode;
@@ -41,12 +41,18 @@ function App({ session, Component, pageProps }: AppPropsWithLayout) {
 			</Head>
 			{/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
 			<SessionProvider session={session as any}>
-				<ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15}>
-					{getLayout(<Component {...pageProps} />)}
-				</ClickSpark>
+				<I18nextProvider i18n={i18n} defaultNS="translation">
+					<ClickSpark
+						sparkColor="#fff"
+						sparkSize={10}
+						sparkRadius={15}
+					>
+						{getLayout(<Component {...pageProps} />)}
+					</ClickSpark>
+				</I18nextProvider>
 			</SessionProvider>
 		</ChakraProvider>
 	);
 }
 
-export default appWithTranslation(App, nextI18NextConfig);
+export default App;
